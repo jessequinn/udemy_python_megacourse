@@ -1,1 +1,0 @@
-print("Adelaide".strip('del'))
