@@ -1,0 +1,31 @@
+<html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>155 Querying data from a MySQL database</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>In the previous videos I covered how to interact with PostGreSQL databases. In case you prefer to work with MySQL databases instead, please see the code further below.</p><p>I set up a remote MySQL database on a server with IP address 108.167.140.122, so you don't have to install and set up a MySQL database yourself. To connect and query data from that remote database, you need a <em>username</em>, <em>password</em>, and the name of the <em>database</em>. These are written inside the Python script below.</p><p>You also need a Python library that interacts with MySQL databases. There are many, but I prefer <em>mysql.connector</em>. To install it, simply execute <code><strong>pip install mysql-connector</strong></code>  or <code><strong>pip3 install mysql-connector</strong></code> depending on whether you use <em>pip</em> or <em>pip3</em>. Once you install the library you can go ahead and try this working example:</p><pre class="prettyprint linenums">import mysql.connector
+word = input("Enter a word in English and press Enter: ")
+con = mysql.connector.connect(
+    user="ardit700_student", 
+    password = "ardit700_student", 
+    host="108.167.140.122", 
+    database = "ardit700_pm1database"
+)
+cursor = con.cursor()
+query = cursor.execute("SELECT * FROM Dictionary WHERE Expression = '%s'" % word)
+results = cursor.fetchall()
+if results:
+    for result in results:
+        print(result[1])
+else:
+    print("We couldn't find any results about that.")</pre></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>

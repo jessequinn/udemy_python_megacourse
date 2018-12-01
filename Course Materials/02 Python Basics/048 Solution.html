@@ -1,0 +1,46 @@
+<html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>048 Solution</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>One way to do this is to use the <code>read()</code>  method:</p>
+
+<pre class="prettyprint linenums">myfile = open("fruits.txt")
+content = myfile.read()
+myfile.close()
+content = content.splitlines()
+for i in content:
+     print(len(i))</pre>
+
+
+
+
+
+
+
+<p>Another way is to use <code>readlines()</code> :</p>
+
+
+
+<pre class="prettyprint linenums">file = open("fruits.txt")
+content = file.readlines()
+content = [line.strip() for line in content]
+file.close()
+for i in content:
+    print(len(i))</pre>
+
+
+
+
+
+<p><br></p></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>

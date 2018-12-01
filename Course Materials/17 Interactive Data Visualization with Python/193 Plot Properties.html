@@ -1,0 +1,34 @@
+<html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>193 Plot Properties</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>You can add a title to the plot, set the figure width and height, change title font, etc. Below is a summary of properties can be added to change the style of the plot:</p>
+
+<pre class="prettyprint linenums">import pandas
+from bokeh.plotting import figure, output_file, show
+ 
+p=figure(plot_width=500,plot_height=400, tools='pan',logo=None)
+ 
+p.title.text="Cool Data"
+p.title.text_color="Gray"
+p.title.text_font="times"
+p.title.text_font_style="bold"
+p.xaxis.minor_tick_line_color=None
+p.yaxis.minor_tick_line_color=None
+p.xaxis.axis_label="Date"
+p.yaxis.axis_label="Intensity"    
+ 
+p.line([1,2,3],[4,5,6])
+output_file("graph.html")
+show(p)</pre></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>
